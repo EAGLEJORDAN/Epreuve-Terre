@@ -1,12 +1,24 @@
-function JSClock (parametre1,parametre2)
+function convertTo12hFormat(parametre1,parametre2, parametre3)
 {
-	var convertTo12hFormat=""+((parametre1>12)? parametre1 - 12 : parametre1);
-	if (parametre1 == 0)
-    convertTo12hFormat = "12";
-	
-	convertTo12hFormat += ((parametre2 < 10) ? ":0" : ":") + parametre2;
-	
-  	convertTo12hFormat+=(parametre1>=12)?" P.M.":" A.M.";
-  	console.log(convertTo12hFormat);
+	if (parametre1 < 12)
+	{
+		console.log(parametre1 + parametre2 + parametre3 + " A.M")
+	}
+	else if(parametre1 === 12)
+	{
+		console.log(parametre1 + parametre2 + parametre3 + " A.M")
+	}
+	else if (parametre1 === 24)
+	{
+		console.log((parametre1 - 24) + "0" + parametre2 + parametre3 +" P.M");
+	}
+	else if (parametre1 > 12)
+	{
+		console.log(parametre1 - 12 + parametre2 + parametre3 + " PM");
+	}
+	else
+	{
+		console.log(erreur);
+	}
 }
-JSClock(23,45);
+convertTo12hFormat(24,":",45);
