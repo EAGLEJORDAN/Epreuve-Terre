@@ -10,7 +10,7 @@ function puissanceDunNombre (parametre1,parametre2)
 	}
 	else
 	{
-	var resultat=Math.pow(parametre1,parametre2);
+	var resultat=parametre1**parametre2;
 	console.log(resultat);
 	}
 }
